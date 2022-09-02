@@ -1,5 +1,17 @@
 using UnityEngine;
 
+
+/// <summary>
+/// 
+/// Variation of the AudioFocus3D class that takes into account the priority of Audiosources.
+/// The priority attribute is utilised in order to select particular Audiosources instead of a blanket selection.
+///
+/// The AudioFocus3D class uses the camera FOV to identify Audiosources within and outside the screen.
+/// It can be used as a primitive dway to dynamically alter Audiosource attributes depending on whether
+/// the emitting game objects are on or off screen processing.
+/// 
+/// </summary>
+
 public class AudioFocus3DPriority : MonoBehaviour
 {
 
@@ -49,6 +61,8 @@ public class AudioFocus3DPriority : MonoBehaviour
     void Update()
     {
 
+        // *** CODE FOR TESTING THE FILTERS IN-GAME - IGNORE *** //
+
         // Check whether the scene contains any audio sources and initialise components
         //FindFOVAudioSources();
         //CreateLPF();
@@ -78,6 +92,8 @@ public class AudioFocus3DPriority : MonoBehaviour
             lowPassResQ -= 0.01f;
             SetLPFParams(cutOffLPF, resLPF);
         }*/
+
+        // *** CODE FOR TESTING THE FILTERS IN-GAME - IGNORE *** //
 
     }
 
@@ -136,6 +152,9 @@ public class AudioFocus3DPriority : MonoBehaviour
 
     }
 
+
+
+
     // ========================== Volume =========================
 
     private void AdjustVolume(int i, float startVol, float endVol)
@@ -145,6 +164,9 @@ public class AudioFocus3DPriority : MonoBehaviour
         audioSources[i].volume = Mathf.Lerp(startVol, endVol, rampSpeed * Time.deltaTime);
 
     }
+
+
+
 
     // =========================== LPF ===========================
 
@@ -175,6 +197,9 @@ public class AudioFocus3DPriority : MonoBehaviour
         }
 
     }
+
+
+
 
     // ===================== dB Conversions ======================
 

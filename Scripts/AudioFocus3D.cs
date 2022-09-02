@@ -1,5 +1,14 @@
 using UnityEngine;
 
+
+/// <summary>
+/// 
+/// The AudioFocus3D class uses the camera FOV to identify Audiosources within and outside the screen.
+/// It can be used as a primitive dway to dynamically alter Audiosource attributes depending on whether
+/// the emitting game objects are on or off screen processing.
+/// 
+/// </summary>
+/// 
 public class AudioFocus3D : MonoBehaviour
 {
 
@@ -22,9 +31,6 @@ public class AudioFocus3D : MonoBehaviour
     void Start()
     {
 
-        // Set trigger area based on camera FOV
-        //triggerArea = mainCamera.fieldOfView;
-
         // Collect all audio sources and their initial volume levels
         audioSources = (AudioSource[])GameObject.FindObjectsOfType(typeof(AudioSource));
         initialVol = new float[audioSources.Length];
@@ -43,6 +49,9 @@ public class AudioFocus3D : MonoBehaviour
 
     void Update()
     {
+
+        // *** CODE FOR TESTING THE FILTERS IN-GAME - IGNORE *** //
+
 
         // Check whether the scene contains any audio sources and initialise components
         //FindFOVAudioSources();
@@ -73,6 +82,9 @@ public class AudioFocus3D : MonoBehaviour
             lowPassResQ -= 0.01f;
             SetLPFParams(cutOffLPF, resLPF);
         }*/
+
+
+        // *** CODE FOR TESTING THE FILTERS IN-GAME - IGNORE *** //
 
     }
 
@@ -105,7 +117,10 @@ public class AudioFocus3D : MonoBehaviour
 
     }
 
-    // ========================== Volume =========================
+
+
+
+    // ========================== Volume Attenuation =========================
 
     private void AdjustVolume(int i, float startVol, float endVol)
     {
@@ -114,6 +129,9 @@ public class AudioFocus3D : MonoBehaviour
         audioSources[i].volume = Mathf.Lerp(startVol, endVol, rampSpeed * Time.deltaTime);
 
     }
+
+
+
 
     // =========================== LPF ===========================
 
@@ -144,6 +162,9 @@ public class AudioFocus3D : MonoBehaviour
         }
 
     }
+
+
+
 
     // ===================== dB Conversions ======================
 
