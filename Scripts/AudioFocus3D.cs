@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// 
 /// The AudioFocus3D class uses the camera FOV to identify Audiosources within and outside the screen.
-/// It can be used as a primitive dway to dynamically alter Audiosource attributes depending on whether
+/// It can be used as a primitive way to dynamically alter Audiosource attributes depending on whether
 /// the emitting game objects are on or off screen processing.
 /// 
 /// </summary>

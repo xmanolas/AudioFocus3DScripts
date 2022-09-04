@@ -6,7 +6,7 @@ using UnityEngine;
 /// The priority attribute is utilised in order to select particular Audiosources instead of a blanket selection.
 ///
 /// The AudioFocus3D class uses the camera FOV to identify Audiosources within and outside the screen.
-/// It can be used as a primitive dway to dynamically alter Audiosource attributes depending on whether
+/// It can be used as a primitive way to dynamically alter Audiosource attributes depending on whether
 /// the emitting game objects are on or off screen processing.
 /// 
 /// </summary>
