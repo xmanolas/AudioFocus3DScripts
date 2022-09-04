@@ -17,7 +17,6 @@ public class AudioFocus3DPriority : MonoBehaviour
     // FOV declarations
     public Camera mainCamera;
     private AudioSource[] audioSources;
-    private readonly float rampSpeed = 200.0f;
     private int prioritySound = 256;
     private bool soundOnFOV = false;
     public bool onOffSwitch = false;
@@ -26,6 +25,7 @@ public class AudioFocus3DPriority : MonoBehaviour
     [Range(0.01f, 1.0f)]
     public float volAtt = 1.0f;
     private float[] initialVol;
+    private readonly float rampSpeed = 200.0f;
 
     // LPF declarations
     [Range(20.0f, 22000.0f)]
