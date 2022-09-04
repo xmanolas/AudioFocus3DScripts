@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 /// <summary>
 /// 
 /// Variation of the AudioFocus3D class that takes into account the priority of Audiosources.

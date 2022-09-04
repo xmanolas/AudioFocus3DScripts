@@ -8,19 +8,19 @@ using UnityEngine;
 /// the emitting game objects are on or off screen processing.
 /// 
 /// </summary>
-/// 
+
 public class AudioFocus3D : MonoBehaviour
 {
 
-    // FOV declarations
+    // FOV object declarations
     public Camera mainCamera;
     private AudioSource[] audioSources;
-    private readonly float rampSpeed = 200.0f; 
-
+    
     // Volume Attenuation declarations
     [Range(0.01f, 1.0f)]
     public float volAtt = 1.0f;
     private float[] initialVol;
+    private readonly float rampSpeed = 200.0f;
 
     // LPF declarations
     [Range(20.0f, 22000.0f)]
